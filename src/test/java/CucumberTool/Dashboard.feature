@@ -6,3 +6,4 @@ Feature: Dashboard functionality
     And user clicks on login button
     Then user is successfully logged in
     Then user verify dashboard page
+
