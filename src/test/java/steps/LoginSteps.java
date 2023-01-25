@@ -46,6 +46,7 @@ public class LoginSteps extends CommonMethods {
     public void user_clicks_on_login_button() {
         //  LoginPage login = new LoginPage();
         //  WebElement loginButton = driver.findElement(By.id("btnLogin"));
+        //  loginButton.click();
         click(login.loginButton);
     }
 
@@ -64,7 +65,7 @@ public class LoginSteps extends CommonMethods {
     public void user_enters_ess_username_and_ess_password() {
         //  LoginPage login = new LoginPage();
         //  WebElement usernameField = driver.findElement(By.id("txtUsername"));
-        sendText(login.usernameTextField, "asmahuma321");
+        sendText(login.usernameTextField, "agit123");
         //  WebElement passwordField = driver.findElement(By.id("txtPassword"));
         sendText(login.passwordTextField, "Hum@nhrm123");
     }

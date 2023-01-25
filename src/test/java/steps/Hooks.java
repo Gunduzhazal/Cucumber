@@ -22,12 +22,13 @@ public class Hooks extends CommonMethods {
         if (scenario.isFailed()) {
             //failed screenshot will be available inside failed folder
             pic =  takeScreenshot("failed/" + scenario.getName());
-        }else {
+        } else {
             pic = takeScreenshot("passed/" + scenario.getName());
         }
 
         //to attach the screenshot in our report
         scenario.attach(pic, "image/png", scenario.getName());
+
         closeBrowser();
     }
 

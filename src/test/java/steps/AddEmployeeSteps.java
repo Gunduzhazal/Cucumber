@@ -25,7 +25,6 @@ public class AddEmployeeSteps extends CommonMethods {
     public void user_clicks_on_pim_option() {
         // WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
         // pimOption.click();
-        // click(dashboard.pimOption);
         click(dashboard.pimOption);
     }
 
@@ -39,11 +38,11 @@ public class AddEmployeeSteps extends CommonMethods {
     @When("user enter firstname and lastname")
     public void user_enter_firstname_and_lastname() {
         // WebElement firstName = driver.findElement(By.id("firstName"));
-        // firstName.sendKeys("jaman");
+        // firstName.sendKeys("savas");
         sendText(addEmployee.firstNameField, "savas");
         sendText(addEmployee.lastNameField, "gndz");
         // WebElement lastName = driver.findElement(By.id("lastName"));
-        // lastName.sendKeys("yura");
+        // lastName.sendKeys("gndz");
     }
 
     @When("user clicks on save button")
@@ -90,8 +89,6 @@ public class AddEmployeeSteps extends CommonMethods {
             click(addEmployee.saveButton);
             Thread.sleep(2000);
 
-            //till this point one employee has been added
-            //verifying the employee is home-work
             click(dashboard.addEmployeeOption);
             Thread.sleep(2000);
         }
@@ -112,8 +109,8 @@ public class AddEmployeeSteps extends CommonMethods {
             sendText(addEmployee.firstNameField, mapNewEmp.get("firstName"));
             sendText(addEmployee.middleNameField, mapNewEmp.get("middleName"));
             sendText(addEmployee.lastNameField, mapNewEmp.get("lastName"));
-            String empIdValue = addEmployee.empIdLocator.getAttribute("value");
             sendText(addEmployee.photograph, mapNewEmp.get("photograph"));
+
             if (!addEmployee.checkBox.isSelected()) {
                 click(addEmployee.checkBox);
             }
@@ -122,14 +119,21 @@ public class AddEmployeeSteps extends CommonMethods {
             sendText(addEmployee.createpasswordField, mapNewEmp.get("password"));
             sendText(addEmployee.confirmpasswordField, mapNewEmp.get("confirmPassword"));
 
+            String empIdValue = addEmployee.empIdLocator.getAttribute("value");
+
             click(addEmployee.saveButton);
             System.out.println("click taken on save button");
-            //verification is in home-work
-            Thread.sleep(3000);
+
+            Thread.sleep(2000);
 
             click(dashboard.empListOption);
+
             Thread.sleep(2000);
-            System.out.println("click taken on emp list option");
+
+            click(dashboard.addEmployeeOption);
+            System.out.println("click taken on add employee option");
+
+            Thread.sleep(2000);
 
             //to search the employee, we use emp id what we captured from attribute
             sendText(employeeList.empSearchIdField, empIdValue);
@@ -139,8 +143,8 @@ public class AddEmployeeSteps extends CommonMethods {
             List<WebElement> rowData =
                     driver.findElements(By.xpath("//*[@id='resultTable']/tbody/tr"));
 
-            for (int i = 0; i < rowData.size(); i++) {
-                System.out.println("I am inside the loop and worried about josh");
+            for (int i=0; i<rowData.size(); i++) {
+                System.out.println("I am inside the loop");
                 //getting the text of every element from here and storing it into string
                 String rowText = rowData.get(i).getText();
                 System.out.println(rowText);
@@ -148,7 +152,7 @@ public class AddEmployeeSteps extends CommonMethods {
                 String expectedData = empIdValue + " " + mapNewEmp.get("firstName")
                         + " " + mapNewEmp.get("middleName") + " " + mapNewEmp.get("lastName");
 
-                //verifying the exact details  of the employee
+                //verifying the exact details of the employee
                 Assert.assertEquals(expectedData, rowText);
             }
 

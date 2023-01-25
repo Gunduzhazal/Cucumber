@@ -5,6 +5,7 @@ import org.apache.log4j.*;
 public class Log {
 
     //initialize log4j logs
+
     public static Logger Log = Logger.getLogger(Log.class.getName());
 
     //understand the scope

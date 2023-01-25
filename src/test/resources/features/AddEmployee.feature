@@ -1,7 +1,7 @@
 Feature: Add Employee
 
   Background:
-    # Given user is navigated to HRMS application
+    #Given user is navigated to HRMS application
     When user enters valid username and valid password
     And user clicks on login button
     Then user is successfully logged in
@@ -16,7 +16,7 @@ Feature: Add Employee
 
   @test1
   Scenario: Adding one employee using feature file
-    And user enter "zalam" and "alia"
+    And user enter "savas" and "gndz"
     And user clicks on save button
     Then employee added successfully
 
@@ -27,18 +27,17 @@ Feature: Add Employee
     Then employee added successfully
     Examples:
       | firstName | lastName |
-      |gulnam     |mazar     |
-      |rampal     |chambel   |
-      |azam       |asel      |
+      | rjd       | lgnrhn   |
+      | nvl       | gndz     |
+      | ayse      | mrngz    |
 
   @datatable
   Scenario: Adding multiple employees using data table
     When user adds multiple employees and verify they are added successfully
-      |firstName|middleName|lastName|
-      |zara    |MS        |camilullah|
-      |birgul  |MS        |ozgin     |
-      |alina   |MS        |bob       |
-
+      |firstName|middleName|lastName  |
+      |zara     |MS        |camila    |
+      |gurkan   |MS        |ozgin     |
+      |alina    |MS        |bob       |
 
   @excel
   Scenario: Adding multiple employees using excel file

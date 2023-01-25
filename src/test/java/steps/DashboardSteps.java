@@ -13,7 +13,7 @@ public class DashboardSteps extends CommonMethods {
 
     @Then("user verify dashboard page")
     public void user_verify_dashboard_page() {
-        System.out.println("Batch 14 is happy now");
+        System.out.println("Batch is happy now");
     }
 
     @Then("user verify all the dashboard tabs")
@@ -21,7 +21,7 @@ public class DashboardSteps extends CommonMethods {
         List<String> expectedTabs = dataTable.asList();
         List<String> actualTabs = new ArrayList<>();
 
-        for (WebElement ele :dashboard.dashboardTabs) {
+        for (WebElement ele : dashboard.dashboardTabs) {
             actualTabs.add(ele.getText());
         }
 

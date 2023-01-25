@@ -11,7 +11,7 @@ public class EmployeeSearchSteps extends CommonMethods {
 
     @When("user clicks on EmployeeList option")
     public void user_clicks_on_employee_list_option() {
-        //   WebElement empListOption = driver.findElement(By.id("menu_pim_viewEmployeeList"));
+        //  WebElement empListOption = driver.findElement(By.id("menu_pim_viewEmployeeList"));
         //  click(empListOption);
         click(dashboard.empListOption);
     }
@@ -39,8 +39,8 @@ public class EmployeeSearchSteps extends CommonMethods {
     @When("user enters valid employee name")
     public void user_enters_valid_employee_name() {
         //  WebElement searchNameField = driver.findElement(By.id("empsearch_employee_name_empName"));
-        //  sendText(searchNameField, "dawggy");
-        sendText(employeeList.empSearchNameField, "ms");
+        //  sendText(searchNameField, "hazel");
+        sendText(employeeList.empSearchNameField, "hazel");
 
     }
 }

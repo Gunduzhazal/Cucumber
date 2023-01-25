@@ -20,6 +20,7 @@ public class LoginPage extends CommonMethods {
     public WebElement errorMessage;
 
     public LoginPage() {
+        // call selenium page factory
         PageFactory.initElements(driver, this);
     }
 }

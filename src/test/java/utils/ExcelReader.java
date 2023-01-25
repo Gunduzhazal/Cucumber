@@ -34,7 +34,7 @@ public class ExcelReader {
     }
 
     //this method will give the row count
-    public static int getRowCount(){
+    public static int getRowCount() {
         return sheet.getPhysicalNumberOfRows();
     }
 
@@ -44,7 +44,7 @@ public class ExcelReader {
     }
 
     //this method will give the cell data in string format
-    public static String getCellData(int rowIndex, int colIndex){
+    public static String getCellData(int rowIndex, int colIndex) {
         return sheet.getRow(rowIndex).getCell(colIndex).toString();
     }
 

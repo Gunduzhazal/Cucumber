@@ -68,9 +68,11 @@ public class DBUtility {
                 }
                 listFromRset.add(mapData);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
 
             return listFromRset;
 
